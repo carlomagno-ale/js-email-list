@@ -9,15 +9,20 @@ const listEl = document.getElementById('email-list')
 const btnGenerate = document.getElementById('btn-generate')
 
 
-for (i = 0; i < 10; i++) {
+btnGenerate.addEventListener('click', () => {
+
+    listEl.innerHTML = ""
+
+    for (i = 0; i < 10; i++) {
         axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
             .then(response => {
-                console.log(response.data.response);
                 listEl.innerHTML += `
-                 <li>${response.data.response}</li> `
+                 <li>${response.data.response}</li>`
             })
             .catch(error => console.error(error));
     }
+
+})
 
 
 
