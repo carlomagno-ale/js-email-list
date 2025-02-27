@@ -17,7 +17,7 @@ btnGenerate.addEventListener('click', () => {
         axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
             .then(response => {
                 listEl.innerHTML += `
-                 <li>${response.data.response}</li>`
+                 <li class="list-group-item">${response.data.response}</li>`
             })
             .catch(error => console.error(error));
     }
